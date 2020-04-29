@@ -1,0 +1,23 @@
+.note-list{
+    h1{
+          font-family: 'Caveat', cursive;
+            text-align: center;
+            width: 80%;
+            margin: 1em auto;
+            color:rgb(40, 69, 236);
+    }
+    padding: 1em 0em;
+}
+.pp{
+  font-size: 1.5em;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .note-list{
+    width: 80%;
+    margin: 2em auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+}

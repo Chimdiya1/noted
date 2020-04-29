@@ -1,0 +1,104 @@
+.note-item{
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid rgb(209, 209, 209);
+    margin: 1em auto;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .note-preview{
+        height: 70%;
+        overflow: hidden;
+        border-radius: 10px;
+        text-align: justify;
+        padding: 1em;
+        color: #686868;
+    }
+ 
+    
+}
+.about{
+    border-top: 1px solid #A8A8A8;
+    height: 25%;
+    display: flex;
+    padding:  1em;
+    justify-content: space-between;
+    align-items: center;
+    .info{
+        .edited{
+            color: rgb(160, 160, 160);
+        }
+    }
+    .actions{
+        width: 23%;
+        display: flex;
+        justify-content: space-between;
+        .edit{
+            font-size: 1.5em;
+            color: rgb(40, 69, 236);
+            cursor:'pointer'
+
+        }
+        .delete{
+            font-size: 1.5em;
+            color: rgb(56, 56, 56);
+            cursor:'pointer'
+
+        }
+    }
+
+}
+@media (min-width: 700px) {
+  .note-item{
+    width: 40%;
+    border-radius: 10px;
+    border: 1px solid rgb(209, 209, 209);
+    margin: 1em auto;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .note-preview{
+        height: 70%;
+        overflow: hidden;
+        border-radius: 10px;
+        text-align: justify;
+        padding: 1em;
+        color: #686868;
+    }
+ 
+    
+}
+.about{
+    border-top: 1px solid #A8A8A8;
+    height: 25%;
+    display: flex;
+    padding:  1em;
+    justify-content: space-between;
+    align-items: center;
+    .info{
+        .edited{
+            color: rgb(160, 160, 160);
+        }
+    }
+    .actions{
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+        .edit{
+            font-size: 1.5em;
+            color: rgb(40, 69, 236);
+            cursor:'pointer'
+
+        }
+        .delete{
+            font-size: 1.5em;
+            color: rgb(56, 56, 56);
+            cursor:'pointer'
+
+        }
+    }
+
+}
+}
