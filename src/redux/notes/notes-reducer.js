@@ -19,11 +19,11 @@ const notesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         notes: [
-          ...state.notes,
           {
             ...action.payload,
             id: uuidv4(),
           },
+          ...state.notes,
         ],
       };
     case NotesActionTypes.DELETE_NOTE:

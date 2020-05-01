@@ -8,8 +8,7 @@ import {
   faArrowAltCircleLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const check = <FontAwesomeIcon style={{ color: 'rgb(40, 69, 236)' }} icon={faCheckCircle} />;
 const cross = <FontAwesomeIcon style={{ color: 'black' }} icon={faArrowAltCircleLeft} />;
@@ -28,7 +27,7 @@ const dates = {
   11: 'December',
 };
 class AddNote extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -41,6 +40,7 @@ class AddNote extends React.Component {
 
   componentDidMount() {
     const { title, content, id, edited } = this.props.location.state;
+
     this.setState({
       title,
       content,
@@ -55,20 +55,12 @@ class AddNote extends React.Component {
       [name]: value,
       edited: `${date.getDate()} ${
         dates[date.getMonth()]
-      } ${date.getHours()}:${date.getMinutes()} `,
+        } ${date.getHours()}:${date.getMinutes()} `,
     });
   };
 
   handleSubmit = (event) => {
-    const notify = () => {
-      console.log('notified')
-      toast('Done', {
-        type: toast.TYPE.SUCCESS,
-        draggablePercent: 60,
-        hideProgressBar: true,
-        className: 'pp',
-      });
-    };
+    const { notify } = this.props
     event.preventDefault();
     if (this.props.match.path === '/editnote/:noteid') {
       this.props.editNote(this.state);
@@ -91,10 +83,9 @@ class AddNote extends React.Component {
   };
 
   render() {
-    
+
     return (
       <div>
-        <ToastContainer autoClose={2000} />
         <form className="add-note">
           <input
             required
@@ -120,15 +111,18 @@ class AddNote extends React.Component {
                 {check}
               </button>
             ) : (
-              <button
-                onClick={this.handleSubmit}
-                className="check"
-                type="submit"
-                value="Submit Form"
-              >
-                {check}
-              </button>
-            )}
+                
+                  <button
+                    onClick={this.handleSubmit}
+                    className="check"
+                    type="submit"
+                    value="Submit Form"
+                >
+                  <Link to="/">
+                    {check}
+                  </Link>
+                  </button>
+              )}
 
             <Link to="/">
               <button className="cancel" onClick={this.cancel}>
