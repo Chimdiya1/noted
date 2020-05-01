@@ -35,6 +35,7 @@ function App() {
           path="/editnote/:noteid"
           render={(props) => <AddNote {...props} notify={notify} />}
         />
+        <Route component={NoteList} />
       </Switch>
     </div>
   );
